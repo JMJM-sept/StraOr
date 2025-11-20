@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">Navigation_Drawer_App</string>
+    <string name="app_name">Navigation Drawer App</string>
+    <string name="menu_home">Inicio</string>
+    <string name="menu_profile">Perfil</string>
+    <string name="menu_settings">Ajustes</string>
+    <string name="navigation_drawer_open">Abrir menú de navegación</string>
+    <string name="navigation_drawer_close">Cerrar menú de navegación</string>
+    <string name="home_placeholder">Espacio para agregar ejercicios o ejemplos de la sección de inicio.</string>
+    <string name="profile_placeholder">Espacio para agregar ejercicios o ejemplos relacionados con el perfil.</string>
+    <string name="settings_placeholder">Espacio para agregar ejercicios o ejemplos de la sección de ajustes.</string>
 </resources>
