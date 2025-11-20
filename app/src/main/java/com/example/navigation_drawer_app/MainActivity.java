@@ -17,9 +17,9 @@ import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private DrawerLayout drawerLayout;
-    private NavigationView navigationView;
-    private MaterialToolbar toolbar;
+    private DrawerLayout cajonDeNavegacion;
+    private NavigationView vistaDeNavegacion;
+    private MaterialToolbar barraDeHerramientas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,64 +27,64 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        drawerLayout = findViewById(R.id.drawer_layout);
-        navigationView = findViewById(R.id.nav_view);
-        toolbar = findViewById(R.id.top_app_bar);
+        cajonDeNavegacion = findViewById(R.id.drawer_layout);
+        vistaDeNavegacion = findViewById(R.id.nav_view);
+        barraDeHerramientas = findViewById(R.id.top_app_bar);
 
-        ViewCompat.setOnApplyWindowInsetsListener(drawerLayout, (v, insets) -> {
+        ViewCompat.setOnApplyWindowInsetsListener(cajonDeNavegacion, (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        setSupportActionBar(toolbar);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+        setSupportActionBar(barraDeHerramientas);
+        ActionBarDrawerToggle alternador = new ActionBarDrawerToggle(
                 this,
-                drawerLayout,
-                toolbar,
+                cajonDeNavegacion,
+                barraDeHerramientas,
                 R.string.navigation_drawer_open,
                 R.string.navigation_drawer_close);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
+        cajonDeNavegacion.addDrawerListener(alternador);
+        alternador.syncState();
 
-        navigationView.setNavigationItemSelectedListener(item -> {
-            Fragment fragment;
-            String title;
-            int itemId = item.getItemId();
-            if (itemId == R.id.nav_profile) {
-                fragment = new ProfileFragment();
-                title = getString(R.string.menu_profile);
-            } else if (itemId == R.id.nav_settings) {
-                fragment = new SettingsFragment();
-                title = getString(R.string.menu_settings);
+        vistaDeNavegacion.setNavigationItemSelectedListener(item -> {
+            Fragment fragmento;
+            String titulo;
+            int idElemento = item.getItemId();
+            if (idElemento == R.id.nav_profile) {
+                fragmento = new ProfileFragment();
+                titulo = getString(R.string.menu_profile);
+            } else if (idElemento == R.id.nav_settings) {
+                fragmento = new SettingsFragment();
+                titulo = getString(R.string.menu_settings);
             } else {
-                fragment = new HomeFragment();
-                title = getString(R.string.menu_home);
+                fragmento = new HomeFragment();
+                titulo = getString(R.string.menu_home);
             }
 
-            replaceFragment(fragment, title);
-            drawerLayout.closeDrawer(GravityCompat.START);
+            reemplazarFragmento(fragmento, titulo);
+            cajonDeNavegacion.closeDrawer(GravityCompat.START);
             return true;
         });
 
         if (savedInstanceState == null) {
-            navigationView.setCheckedItem(R.id.nav_home);
-            replaceFragment(new HomeFragment(), getString(R.string.menu_home));
+            vistaDeNavegacion.setCheckedItem(R.id.nav_home);
+            reemplazarFragmento(new HomeFragment(), getString(R.string.menu_home));
         }
     }
 
-    private void replaceFragment(Fragment fragment, String title) {
+    private void reemplazarFragmento(Fragment fragmento, String titulo) {
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.content_frame, fragment)
+                .replace(R.id.content_frame, fragmento)
                 .commit();
-        setTitle(title);
+        setTitle(titulo);
     }
 
     @Override
     public void onBackPressed() {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START);
+        if (cajonDeNavegacion.isDrawerOpen(GravityCompat.START)) {
+            cajonDeNavegacion.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
         }
