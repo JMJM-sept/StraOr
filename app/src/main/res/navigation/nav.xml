@@ -1,0 +1,72 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/welcomeFragment">
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.navigation_drawer_app.WelcomeFragment"
+        android:label="Welcome"
+        tools:layout="@layout/fragment_welcome">
+        <action
+            android:id="@+id/action_welcomeFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.navigation_drawer_app.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_addItemFragment"
+            app:destination="@id/addItemFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addItemFragment"
+        android:name="com.example.navigation_drawer_app.Fragment_Add_Item"
+        android:label="Add"
+        tools:layout="@layout/fragment_add_item">
+        <argument
+            android:name="tipo"
+            app:argType="string"
+            android:defaultValue="" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.navigation_drawer_app.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.navigation_drawer_app.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/penListFragment"
+        android:name="com.example.navigation_drawer_app.Fragment_pen_list"
+        android:label="Pen List"
+        tools:layout="@layout/fragment_pen_list" />
+
+    <fragment
+        android:id="@+id/pencilListFragment"
+        android:name="com.example.navigation_drawer_app.Fragment_pencil_list"
+        android:label="Pencil List"
+        tools:layout="@layout/fragment_pencil_list" />
+
+    <fragment
+        android:id="@+id/notebookListFragment"
+        android:name="com.example.navigation_drawer_app.Fragment_notebook_list"
+        android:label="Notebook List"
+        tools:layout="@layout/fragment_notebook_list" />
+
+    <fragment
+        android:id="@+id/inkListFragment"
+        android:name="com.example.navigation_drawer_app.Fragment_ink_list"
+        android:label="Ink List"
+        tools:layout="@layout/fragment_ink_list" />
+</navigation>

@@ -1,16 +1,16 @@
 package com.example.navigation_drawer_app;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
 import androidx.core.view.GravityCompat;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.navigation.NavigationView;
@@ -31,56 +31,31 @@ public class MainActivity extends AppCompatActivity {
         vistaDeNavegacion = findViewById(R.id.nav_view);
         barraDeHerramientas = findViewById(R.id.top_app_bar);
 
-        ViewCompat.setOnApplyWindowInsetsListener(cajonDeNavegacion, (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-
         setSupportActionBar(barraDeHerramientas);
+
         ActionBarDrawerToggle alternador = new ActionBarDrawerToggle(
-                this,
-                cajonDeNavegacion,
-                barraDeHerramientas,
-                R.string.navigation_drawer_open,
-                R.string.navigation_drawer_close);
+                this, cajonDeNavegacion, barraDeHerramientas,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         cajonDeNavegacion.addDrawerListener(alternador);
         alternador.syncState();
 
-        vistaDeNavegacion.setNavigationItemSelectedListener(item -> {
-            Fragment fragmento;
-            String titulo;
-            int idElemento = item.getItemId();
-            if (idElemento == R.id.nav_profile) {
-                fragmento = new ProfileFragment();
-                titulo = getString(R.string.menu_profile);
-            } else if (idElemento == R.id.nav_settings) {
-                fragmento = new SettingsFragment();
-                titulo = getString(R.string.menu_settings);
-            } else {
-                fragmento = new HomeFragment();
-                titulo = getString(R.string.menu_home);
-            }
+        NavHostFragment navHostFragment =
+                (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
+        NavController navController = navHostFragment.getNavController();
 
-            reemplazarFragmento(fragmento, titulo);
-            cajonDeNavegacion.closeDrawer(GravityCompat.START);
-            return true;
-        });
-
-        if (savedInstanceState == null) {
-            vistaDeNavegacion.setCheckedItem(R.id.nav_home);
-            reemplazarFragmento(new HomeFragment(), getString(R.string.menu_home));
-        }
+        NavigationUI.setupWithNavController(vistaDeNavegacion, navController);
+        NavigationUI.setupActionBarWithNavController(this, navController, cajonDeNavegacion);
     }
 
-    private void reemplazarFragmento(Fragment fragmento, String titulo) {
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.content_frame, fragmento)
-                .commit();
-        setTitle(titulo);
+    @Override
+    public boolean onSupportNavigateUp() {
+        NavHostFragment navHostFragment =
+                (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
+        NavController navController = navHostFragment.getNavController();
+        return NavigationUI.navigateUp(navController, cajonDeNavegacion) || super.onSupportNavigateUp();
     }
 
+    @SuppressLint("GestureBackNavigation")
     @Override
     public void onBackPressed() {
         if (cajonDeNavegacion.isDrawerOpen(GravityCompat.START)) {

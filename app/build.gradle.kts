@@ -1,12 +1,12 @@
+import com.android.tools.r8.internal.im
+
 plugins {
     alias(libs.plugins.android.application)
 }
 
 android {
     namespace = "com.example.navigation_drawer_app"
-    compileSdk {
-        version = release(36)
-    }
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.navigation_drawer_app"
@@ -34,6 +34,8 @@ android {
 }
 
 dependencies {
+    implementation("androidx.navigation:navigation-fragment:2.9.6")
+    implementation("androidx.navigation:navigation-ui:2.9.6")
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
