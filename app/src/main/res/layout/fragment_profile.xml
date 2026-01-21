@@ -100,6 +100,10 @@
             android:id="@+id/rowInk"
             layout="@layout/section_row_ink" />
 
+        <include
+            android:id="@+id/rowCita"
+            layout="@layout/section_row_cita" />
+
         <View
             android:layout_width="match_parent"
             android:layout_height="16dp"/>

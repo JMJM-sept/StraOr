@@ -69,4 +69,10 @@
         android:name="com.example.navigation_drawer_app.Fragment_ink_list"
         android:label="Ink List"
         tools:layout="@layout/fragment_ink_list" />
+
+    <fragment
+        android:id="@+id/citaListFragment"
+        android:name="com.example.navigation_drawer_app.Fragment_cita_list"
+        android:label="Citas"
+        tools:layout="@layout/fragment_cita_list" />
 </navigation>
