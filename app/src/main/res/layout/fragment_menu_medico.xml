@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    tools:context=".menuMedico">
+
+    <TextView
+        android:text="Menú del Médico"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        card_view:cardElevation="6dp"
+        card_view:cardCornerRadius="12dp">
+
+        <Button
+            android:id="@+id/btnVerCitasMedico"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ver Citas"
+            android:textSize="14sp"
+            android:padding="14dp"/>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardElevation="6dp"
+        card_view:cardCornerRadius="12dp">
+
+        <Button
+            android:id="@+id/btnPerfilMedico"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Perfil Médico"
+            android:textSize="14sp"
+            android:padding="14dp"/>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

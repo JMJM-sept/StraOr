@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".datosMedicos">
+
+    <!-- Título principal -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ingresa tus datos médicos"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:layout_marginBottom="30dp"/>
+
+    <!-- Sección Alergias -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alergías:"
+            android:textSize="14sp"
+            android:layout_marginEnd="10dp" />
+
+        <RadioGroup
+            android:id="@+id/rgAlergias"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/rbAlergiaSi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sí"
+                android:textSize="14sp" />
+            <RadioButton
+                android:id="@+id/rbAlergiaNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                android:textSize="14sp" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/etAlergias"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:hint="¿Cuáles?"
+            android:textSize="12sp"
+            android:layout_marginStart="10dp" />
+    </LinearLayout>
+
+    <!-- Sección Medicamentos -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Toma medicamentos:"
+            android:textSize="14sp"
+            android:layout_marginEnd="10dp" />
+
+        <RadioGroup
+            android:id="@+id/rgMedicamentos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/rbMedicamentoSi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sí"
+                android:textSize="14sp" />
+            <RadioButton
+                android:id="@+id/rbMedicamentoNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                android:textSize="14sp" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/etMedicamentos"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:hint="¿Cuáles?"
+            android:textSize="12sp"
+            android:layout_marginStart="10dp" />
+    </LinearLayout>
+
+    <!-- Sección Cirugías -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cirugías previas:"
+            android:textSize="14sp"
+            android:layout_marginEnd="10dp" />
+
+        <RadioGroup
+            android:id="@+id/rgCirugias"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/rbCirugiaSi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sí"
+                android:textSize="14sp" />
+            <RadioButton
+                android:id="@+id/rbCirugiaNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                android:textSize="14sp" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/etCirugias"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:hint="¿Cuáles?"
+            android:textSize="12sp"
+            android:layout_marginStart="10dp" />
+    </LinearLayout>
+
+    <!-- Tipo de sangre -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tipo de sangre:"
+            android:textSize="14sp"
+            android:layout_marginEnd="10dp" />
+
+        <Spinner
+            android:id="@+id/spinnerTipoSangre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <!-- Enfermedades crónicas -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enfermedades crónicas:"
+            android:textSize="14sp"
+            android:layout_marginEnd="10dp" />
+
+        <RadioGroup
+            android:id="@+id/rgEnfermedades"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/rbEnfermedadSi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sí"
+                android:textSize="14sp" />
+            <RadioButton
+                android:id="@+id/rbEnfermedadNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                android:textSize="14sp" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/etEnfermedades"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:hint="¿Cuáles?"
+            android:textSize="12sp"
+            android:layout_marginStart="10dp" />
+    </LinearLayout>
+
+    <!-- Botón -->
+    <Button
+        android:id="@+id/btnContinuarDM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Siguiente"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp" />
+</LinearLayout>

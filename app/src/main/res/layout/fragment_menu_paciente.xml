@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="30dp"
+    android:orientation="vertical"
+    tools:context=".menuPaciente">
+
+    <TextView
+        android:id="@+id/tvTituloMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gestión de Citas"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="25dp"/>
+
+    <Button
+        android:id="@+id/btnAgendarCita"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Agendar Cita"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btnConsultarCita"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Consultar Cita"
+        android:textSize="16sp"
+        android:layout_marginTop="10dp" />
+
+    <Button
+        android:id="@+id/btnEliminarCita"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Eliminar Cita"
+        android:textSize="16sp"
+        android:layout_marginTop="10dp" />
+
+</LinearLayout>

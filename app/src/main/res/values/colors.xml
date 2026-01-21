@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cd_primary">#C1ABC7</color>
+    <color name="cd_bluegray">#A9B7C9</color>
+    <color name="cd_dark">#647891</color>
+    <color name="cd_muted">#92809C</color>
+    <color name="cd_bg">#F2F2F0</color>
+    <color name="cd_text_tertiary">#92809C</color>
+    <color name="cd_surface">#FFFFFF</color>
+    <color name="cd_stroke">#E3E3E3</color>
+
+    <color name="cd_text_primary">#2B2B2B</color>
+    <color name="cd_text_secondary">#647891</color>
+    <color name="cd_text_hint">#92809C</color>
+
+    <color name="cd_on_primary">#FFFFFF</color>
+    <color name="cd_ripple">#A9B7C9</color>
+
+</resources>

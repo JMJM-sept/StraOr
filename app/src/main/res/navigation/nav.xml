@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/mainFragment">
+
+    <!-- ===================== INICIO ===================== -->
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.caredateandroid.mainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_crearCuenta"
+            app:destination="@id/crearCuenta" />
+        <action
+            android:id="@+id/action_mainFragment_to_inicioSesion"
+            app:destination="@id/inicioSesion" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/crearCuenta"
+        android:name="com.example.caredateandroid.crearCuenta"
+        tools:layout="@layout/fragment_crear_cuenta">
+        <action
+            android:id="@+id/action_crearCuenta_to_tipoUsuario"
+            app:destination="@id/tipoUsuario" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/tipoUsuario"
+        android:name="com.example.caredateandroid.tipoUsuario"
+        tools:layout="@layout/fragment_tipo_usuario">
+        <action
+            android:id="@+id/action_tipoUsuario_to_datosPersonales"
+            app:destination="@id/datosPersonales" />
+        <action
+            android:id="@+id/action_tipoUsuario_to_datosPersonalesMed"
+            app:destination="@id/datosPersonalesMed" />
+    </fragment>
+
+
+    <!-- ===================== PACIENTE ===================== -->
+    <fragment
+        android:id="@+id/datosPersonales"
+        android:name="com.example.caredateandroid.datosPersonales">
+        <action
+            android:id="@+id/action_datosPersonales_to_datosMedicos"
+            app:destination="@id/datosMedicos" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/datosMedicos"
+        android:name="com.example.caredateandroid.datosMedicos">
+        <action
+            android:id="@+id/action_datosMedicos_to_direccionPaciente"
+            app:destination="@id/direccionPaciente" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/direccionPaciente"
+        android:name="com.example.caredateandroid.direccionPaciente">
+        <action
+            android:id="@+id/action_direccionPaciente_to_seleccionClinica"
+            app:destination="@id/seleccionClinica" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/seleccionClinica"
+        android:name="com.example.caredateandroid.seleccionClinica">
+        <action
+            android:id="@+id/action_seleccionClinica_to_menuPaciente"
+            app:destination="@id/menuPaciente" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/menuPaciente"
+        android:name="com.example.caredateandroid.menuPaciente">
+        <action
+            android:id="@+id/action_menuPaciente_to_agendarCita"
+            app:destination="@id/agendarCita" />
+        <action
+            android:id="@+id/action_menuPaciente_to_cancelarCita"
+            app:destination="@id/cancelarCita" />
+        <action
+            android:id="@+id/action_menuPaciente_to_consultarCita"
+            app:destination="@id/consultarCita" />
+    </fragment>
+
+    <fragment android:id="@+id/agendarCita"
+        android:name="com.example.caredateandroid.agendarCita" />
+
+    <fragment android:id="@+id/cancelarCita"
+        android:name="com.example.caredateandroid.cancelarCita" />
+
+    <fragment android:id="@+id/consultarCita"
+        android:name="com.example.caredateandroid.consultarCita" />
+
+    <!-- ===================== MÉDICO ===================== -->
+    <fragment
+        android:id="@+id/datosPersonalesMed"
+        android:name="com.example.caredateandroid.datosPersonalesMed">
+        <action
+            android:id="@+id/action_datosPersonalesMed_to_direccionMedico"
+            app:destination="@id/direccionMedico" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/direccionMedico"
+        android:name="com.example.caredateandroid.direccionMedico">
+        <action
+            android:id="@+id/action_direccionMedico_to_menuMedico"
+            app:destination="@id/menuMedico" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/menuMedico"
+        android:name="com.example.caredateandroid.menuMedico">
+
+        <action
+            android:id="@+id/action_menuMedico_to_verCitasMedico"
+            app:destination="@id/verCitasMedico" />
+
+        <action
+            android:id="@+id/action_menuMedico_to_perfilMedico"
+            app:destination="@id/perfilMedico" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/verCitasMedico"
+        android:name="com.example.caredateandroid.verCitasMedico">
+        <action
+            android:id="@+id/action_verCitasMedico_to_detalleCitaMedico"
+            app:destination="@id/detalleCitaMedico" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detalleCitaMedico"
+        android:name="com.example.caredateandroid.detalleCitaMedico">
+        <action
+            android:id="@+id/action_detalleCitaMedico_to_registrarNotaMedica"
+            app:destination="@id/registrarNotaMedica" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registrarNotaMedica"
+        android:name="com.example.caredateandroid.registrarNotaMedica" />
+
+    <fragment
+        android:id="@+id/perfilMedico"
+        android:name="com.example.caredateandroid.perfilMedico">
+        <action
+            android:id="@+id/action_menuMedico_to_editarPerfilMedico"
+            app:destination="@id/editarPerfilMedico" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editarPerfilMedico"
+        android:name="com.example.caredateandroid.editarPerfilMedico" />
+
+    <fragment
+        android:id="@+id/inicioSesion"
+        android:name="com.example.caredateandroid.inicioSesion"
+        tools:layout="@layout/fragment_inicio_sesion">
+
+        <action
+            android:id="@+id/action_inicioSesion_to_menuPaciente"
+            app:destination="@id/menuPaciente" />
+
+        <action
+            android:id="@+id/action_inicioSesion_to_menuMedico"
+            app:destination="@id/menuMedico" />
+    </fragment>
+
+
+
+
+</navigation>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/splashRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_gradient_anim">
+
+    <!-- Blob grande (arriba-izquierda) -->
+    <View
+        android:id="@+id/blobOne"
+        android:layout_width="260dp"
+        android:layout_height="260dp"
+        android:background="@drawable/splash_blob_purple"
+        android:alpha="0.35"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="-60dp"
+        android:layout_marginStart="-70dp"
+        android:animation="@anim/splash_float_slow"/>
+
+    <!-- Blob mediano (abajo-derecha) -->
+    <View
+        android:id="@+id/blobTwo"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:background="@drawable/splash_blob_lavender"
+        android:alpha="0.30"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="-70dp"
+        android:layout_marginEnd="-60dp"
+        android:animation="@anim/splash_float_fast"/>
+
+    <!-- Logo -->
+    <ImageView
+        android:id="@+id/splashLogo"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/caredate_logo"
+        android:scaleType="fitCenter"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Texto pequeño abajo (opcional) -->
+    <TextView
+        android:id="@+id/splashText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cuidando tu salud, organizando tu tiempo"
+        android:textSize="14sp"
+        android:alpha="0.75"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="34dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mainFragment"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/bienvenida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bienvenido a CareDate"
+        android:textSize="36sp"
+        android:gravity="center"
+        android:layout_marginBottom="60dp" />
+
+    <Button
+        android:id="@+id/isesion"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Iniciar sesión"
+        android:textSize="20sp"
+        android:layout_marginBottom="25dp" />
+
+    <Button
+        android:id="@+id/ccuenta"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Crear cuenta"
+        android:textSize="20sp" />
+
+
+
+</LinearLayout>

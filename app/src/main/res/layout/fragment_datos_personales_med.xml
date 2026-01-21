@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        tools:context=".datosPersonalesMed">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Datos personales del médico"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- Nombre -->
+        <EditText
+            android:id="@+id/etNombreMed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre(s)" />
+
+        <!-- Apellido paterno -->
+        <EditText
+            android:id="@+id/etApellidoPaternoMed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Apellido paterno"
+            android:layout_marginTop="15dp"/>
+
+        <!-- Apellido materno -->
+        <EditText
+            android:id="@+id/etApellidoMaternoMed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Apellido materno"
+            android:layout_marginTop="15dp"/>
+
+        <!-- Cédula -->
+        <EditText
+            android:id="@+id/etCedulaMed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Cédula profesional"
+            android:layout_marginTop="15dp" />
+
+        <!-- Fecha de nacimiento -->
+        <EditText
+            android:id="@+id/etFechaNacMed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Fecha de nacimiento"
+            android:focusable="false"
+            android:clickable="true"
+            android:layout_marginTop="15dp" />
+
+        <!-- Sexo -->
+        <RadioGroup
+            android:id="@+id/rgSexoMed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp">
+
+            <RadioButton
+                android:id="@+id/rbMasculinoMed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Masculino" />
+
+            <RadioButton
+                android:id="@+id/rbFemeninoMed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Femenino"
+                android:layout_marginLeft="20dp"/>
+        </RadioGroup>
+
+        <!-- Email -->
+        <EditText
+            android:id="@+id/etEmailMed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Correo electrónico"
+            android:layout_marginTop="15dp"/>
+
+        <!-- Botón -->
+        <Button
+           android:id="@+id/btnContinuarMed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Continuar"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+</ScrollView>

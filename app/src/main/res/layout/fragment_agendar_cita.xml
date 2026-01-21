@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:weightSum="1"
+    tools:context=".agendarCita">
+    <!-- Título de la pantalla -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agendar Cita"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="5dp"/>
+
+    <!-- Fecha de la cita -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selecciona la fecha:"
+        android:textSize="12sp"
+        android:layout_marginBottom="5dp"/>
+
+    <!-- Hora de la cita -->
+    <DatePicker
+        android:id="@+id/datePicker"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginBottom="10dp"
+        android:calendarViewShown="false"
+        android:scaleX="0.75"
+        android:scaleY="0.75"
+        android:spinnersShown="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selecciona la hora:"
+        android:textSize="12sp"
+        android:layout_marginBottom="5dp"/>
+
+    <TimePicker
+        android:id="@+id/timePicker"
+        android:layout_width="match_parent"
+        android:layout_height="101dp"
+        android:layout_marginBottom="10dp"
+        android:scaleX="0.75"
+        android:scaleY="0.75"
+        android:timePickerMode="spinner" />
+
+    <!-- Motivo de la cita -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Motivo de la cita:"
+        android:textSize="12sp"
+        android:layout_marginBottom="5dp"/>
+
+    <EditText
+        android:id="@+id/etMotivo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Escribe el motivo de la cita"
+        android:inputType="text"
+        android:textSize="12sp"
+        android:layout_marginBottom="10dp"/>
+
+    <!-- Botón para Agendar la Cita -->
+    <Button
+        android:id="@+id/btnAgendarCita"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Agendar Cita"
+        android:textSize="12sp"
+        android:layout_marginTop="10dp"/>
+
+
+
+</LinearLayout>

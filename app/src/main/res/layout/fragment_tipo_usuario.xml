@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="50dp"
+    tools:context=".tipoUsuario">
+
+    <!-- Título de la sección -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selecciona el tipo de usuario"
+        android:textSize="18sp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="40dp"
+        android:gravity="center"
+        android:textStyle="bold"/>
+
+    <!-- RadioGroup para seleccionar tipo de usuario -->
+    <RadioGroup
+        android:id="@+id/rgTipoUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="55dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbMedico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Médico"
+            android:textSize="16sp"/>
+
+        <RadioButton
+            android:id="@+id/rbPaciente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Paciente"
+            android:textSize="16sp"/>
+    </RadioGroup>
+
+    <!-- EditText para cédula profesional (visible solo si se selecciona Médico) -->
+    <LinearLayout
+        android:id="@+id/llCedula"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cédula Profesional:"
+            android:layout_marginEnd="10dp"
+            android:textSize="16sp"/>
+
+        <EditText
+            android:id="@+id/etCedula"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Ingresa tu cédula profesional"
+            android:inputType="text"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <!-- EditText para CURP (visible solo si se selecciona Paciente) -->
+    <LinearLayout
+        android:id="@+id/llCurp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CURP:"
+            android:layout_marginEnd="10dp"
+            android:textSize="16sp"/>
+
+        <EditText
+            android:id="@+id/etCurp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Ingresa tu CURP"
+            android:inputType="text"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <!-- Botón para continuar -->
+    <Button
+        android:id="@+id/btnContinuar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Continuar"
+        android:textSize="16sp"
+        android:layout_marginTop="40dp"/>
+
+
+
+</LinearLayout>

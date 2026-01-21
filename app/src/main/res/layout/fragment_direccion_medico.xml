@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".direccionMedico">
+
+    <!-- Título -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ingresa tus datos de dirección"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_marginTop="30dp" />
+
+    <!-- Calle -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calle:"
+            android:layout_marginEnd="10dp" />
+
+        <EditText
+            android:id="@+id/etCalle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Ingresa la calle"
+            android:inputType="text" />
+    </LinearLayout>
+
+    <!-- Número -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Número:"
+            android:layout_marginEnd="10dp" />
+
+        <EditText
+            android:id="@+id/etNumero"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Ingresa el número"
+            android:inputType="number" />
+    </LinearLayout>
+
+    <!-- Colonia -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Colonia:"
+            android:layout_marginEnd="10dp" />
+
+        <EditText
+            android:id="@+id/etColonia"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Ingresa la colonia"
+            android:inputType="text" />
+    </LinearLayout>
+
+    <!-- Alcaldía/Municipio -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alcaldía/Municipio:"
+            android:layout_marginEnd="10dp" />
+
+        <EditText
+            android:id="@+id/etMunicipio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Ingresa la alcaldía o municipio"
+            android:inputType="text" />
+    </LinearLayout>
+
+    <!-- Código Postal -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Código Postal:"
+            android:layout_marginEnd="10dp" />
+
+        <EditText
+            android:id="@+id/etCP"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Ingresa el código postal"
+            android:inputType="number" />
+    </LinearLayout>
+
+    <!-- Botón Siguiente -->
+    <Button
+        android:id="@+id/btnSiguienteDM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Siguiente"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center" />
+
+</LinearLayout>
