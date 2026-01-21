@@ -53,7 +53,17 @@ public class Fragment_Add_Item extends Fragment {
         long editId = (args != null && args.containsKey("id")) ? args.getLong("id", -1) : -1;
         boolean isEdit = editId != -1;
 
-        tvTitulo.setText((isEdit ? "Edit " : "Add ") + tipo);
+        if ("Cita".equals(tipo)) {
+            tvTitulo.setText(isEdit ? "Editar cita" : "Registrar cita");
+            etBrand.setHint("Título");
+            etUse.setHint("Fecha");
+            etColor.setHint("Lugar");
+        } else {
+            tvTitulo.setText((isEdit ? "Edit " : "Add ") + tipo);
+            etBrand.setHint("Brand");
+            etUse.setHint("Use");
+            etColor.setHint("Color");
+        }
 
         switch (tipo) {
             case "Pen":
@@ -109,6 +119,19 @@ public class Fragment_Add_Item extends Fragment {
                 etBrand.setError("Required");
                 btnGuardar.setEnabled(true);
                 return;
+            }
+
+            if ("Cita".equals(tipo)) {
+                if (useText.isEmpty()) {
+                    etUse.setError("Required");
+                    btnGuardar.setEnabled(true);
+                    return;
+                }
+                if (color.isEmpty()) {
+                    etColor.setError("Required");
+                    btnGuardar.setEnabled(true);
+                    return;
+                }
             }
 
             String inkColor = null;

@@ -24,11 +24,13 @@ public class HomeFragment extends Fragment {
         View btnAddPencil = view.findViewById(R.id.btnAgregarPencil);
         View btnAddNotebook = view.findViewById(R.id.btnAgregarNotebook);
         View btnAddInk = view.findViewById(R.id.btnAgregarInk);
+        View btnAddCita = view.findViewById(R.id.btnAgregarCita);
 
         btnAddPen.setOnClickListener(v -> goAdd("Pen"));
         btnAddPencil.setOnClickListener(v -> goAdd("Pencil"));
         btnAddNotebook.setOnClickListener(v -> goAdd("Notebook"));
         btnAddInk.setOnClickListener(v -> goAdd("Ink"));
+        btnAddCita.setOnClickListener(v -> goAdd("Cita"));
     }
 
     private void goAdd(String tipo) {

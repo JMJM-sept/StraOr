@@ -45,14 +45,16 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.VH> {
     public void onBindViewHolder(@NonNull VH h, int position) {
         Item it = items.get(position);
 
+        String tipo = it.tipo != null ? it.tipo : "";
+
         String title = it.brand != null ? it.brand : "";
-        if (it.color != null && !it.color.trim().isEmpty()) {
+        if (!"Cita".equals(tipo) && it.color != null && !it.color.trim().isEmpty()) {
             title += " (" + it.color.trim() + ")";
         }
         h.tvTitle.setText(title);
 
         String use = it.useText != null ? it.useText.trim() : "";
-        h.tvUse.setText("Use: " + use);
+        h.tvUse.setText(getUseLabel(tipo) + use);
 
         String extra = buildExtra(it);
         if (extra == null || extra.trim().isEmpty()) {
@@ -64,6 +66,13 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.VH> {
 
         h.btnEdit.setOnClickListener(v -> listener.onEdit(it));
         h.btnDelete.setOnClickListener(v -> listener.onDelete(it));
+    }
+
+    private String getUseLabel(String tipo) {
+        if ("Cita".equals(tipo)) {
+            return "Fecha: ";
+        }
+        return "Use: ";
     }
 
     private String buildExtra(Item it) {
@@ -81,6 +90,10 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.VH> {
         } else if ("Pencil".equals(tipo)) {
             return it.typeGraph != null && !it.typeGraph.trim().isEmpty()
                     ? "Type: " + it.typeGraph.trim()
+                    : "";
+        } else if ("Cita".equals(tipo)) {
+            return it.color != null && !it.color.trim().isEmpty()
+                    ? "Lugar: " + it.color.trim()
                     : "";
         }
 

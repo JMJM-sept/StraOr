@@ -22,6 +22,7 @@ public class ProfileFragment extends Fragment {
         View rowPencil = view.findViewById(R.id.rowPencil);
         View rowNotebook = view.findViewById(R.id.rowNotebook);
         View rowInk = view.findViewById(R.id.rowInk);
+        View rowCita = view.findViewById(R.id.rowCita);
 
         if (rowPen != null) {
             rowPen.setOnClickListener(v ->
@@ -45,6 +46,12 @@ public class ProfileFragment extends Fragment {
             rowInk.setOnClickListener(v ->
                     NavHostFragment.findNavController(ProfileFragment.this)
                             .navigate(R.id.inkListFragment));
+        }
+
+        if (rowCita != null) {
+            rowCita.setOnClickListener(v ->
+                    NavHostFragment.findNavController(ProfileFragment.this)
+                            .navigate(R.id.citaListFragment));
         }
     }
 }
